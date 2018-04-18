@@ -1,7 +1,5 @@
 package com.reactnativetutorial;
 
-import com.facebook.react.ReactActivity;
-
 import com.reactnativenavigation.controllers.SplashActivity;
 
 

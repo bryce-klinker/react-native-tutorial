@@ -6,7 +6,10 @@
 # dependencies
 /node_modules
 /flow-typed
-/.idea
+**/.idea
+**/.gradle
+**/build
+**/local.properties
 
 # misc
 .env.local

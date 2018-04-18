@@ -1,15 +1,9 @@
 package com.reactnativetutorial;
 
-import android.app.Application;
-
-import com.facebook.react.ReactApplication;
-import com.reactnativenavigation.NavigationReactPackage;
-import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
-import com.facebook.soloader.SoLoader;
 import com.reactnativenavigation.NavigationApplication;
-
+import com.reactnativenavigation.bridge.NavigationReactPackage;
 
 import java.util.Arrays;
 import java.util.List;
