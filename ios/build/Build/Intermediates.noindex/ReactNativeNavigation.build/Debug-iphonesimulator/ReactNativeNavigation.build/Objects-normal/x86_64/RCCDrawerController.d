@@ -1,0 +1,29 @@
+dependencies: \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerController.m \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerController.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native-navigation/ios/RCCDrawerController/MMDrawerController/MMDrawerController.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerProtocol.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native-navigation/ios/RCCViewController.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native-navigation/ios/RCCDrawerController/MMDrawerController/MMExampleDrawerVisualStateManager.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native-navigation/ios/RCCDrawerController/MMDrawerController/MMDrawerVisualState.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerHelper.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native-navigation/ios/RCCManagerModule.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native-navigation/ios/UIViewController+Rotation.h

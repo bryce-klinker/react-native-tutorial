@@ -1,0 +1,58 @@
+{
+  "name": "react-native-tutorial",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-eslint": "8.2.3",
+    "babel-preset-react-native-stage-0": "1.0.1",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-plugin-flowtype": "2.46.2",
+    "eslint-plugin-import": "2.11.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "7.7.0",
+    "flow-bin": "0.70.0",
+    "flow-typed": "2.4.0",
+    "husky": "0.14.3",
+    "jest": "22.4.3",
+    "jest-react-native": "18.0.0",
+    "lint-staged": "7.0.4",
+    "prettier": "1.12.1",
+    "react-dom": "16.3.1",
+    "react-test-renderer": "16.3.1"
+  },
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "test": "yarn lint && yarn flow && jest",
+    "test:watch": "jest",
+    "flow": "flow",
+    "flow-stop": "flow stop",
+    "lint": "eslint src",
+    "lint:fix": "eslint src index.js index.spec.js --fix",
+    "pretty": "prettier --semi true --print-width 100 --trailing-comma all --single-quote --write \"{index.js,index.spec.js,src/**/*.js\"}",
+    "precommit": "lint-staged && yarn test",
+    "reset:cache": "yarn start --reset-cache"
+  },
+  "jest": {
+    "preset": "react-native",
+    "setupFiles": [
+      "<rootDir>/src/setup-tests.js"
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn pretty",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "babel-preset-flow": "6.23.0",
+    "react": "16.3.1",
+    "react-native": "0.55.3",
+    "react-native-navigation": "1.1.444"
+  }
+}

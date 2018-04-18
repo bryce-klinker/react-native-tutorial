@@ -1,0 +1,18 @@
+dependencies: \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/DevSupport/RCTDevMenu.m \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/DevSupport/RCTDevMenu.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/Modules/RCTDevSettings.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/Base/RCTKeyCommands.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
+  /Users/bryceklinker/pillar/react-native-tutorial/node_modules/react-native/React/Inspector/RCTInspectorPackagerConnection.h
