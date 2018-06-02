@@ -9,6 +9,15 @@ At this point we have a working react-native application with almost zero functi
 * Run android:
   * Create an Android virtual device (AVD)
   * Or Plug in an android device
+  * Once emulator or device is ready:
+    * `yarn android`
+* Run Unit Tests:
+   * `yarn test`
+* Start Packager:
+  * This command is used to inject our transpiled javascript into the phone/emulator's installed application
+  * **NOTE**: `yarn ios` and `yarn android` start this for you.
+    * `yarn start`
+
 ## Steps
 The steps taken up to this point have been:
 
