@@ -21,6 +21,7 @@ The steps taken up to this point have been:
 1. Installed node as a dependency
     1. `yarn add node@9.11.0`
         1. react-native is incompatible with node version 10 (Latest) if we install node as a dependency we can get around this without using nvm or some other solution.
+    1. Updated [.gitignore](./.gitignore) to ignore ios and android output
     
 # What is here?
 
