@@ -18,7 +18,9 @@ ios/build/
 
 # android
 
-
+android/build/
+android/app/build/
+android/.gradle/
 
 npm-debug.log*
 yarn-debug.log*
