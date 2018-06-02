@@ -30,7 +30,7 @@ This is the entry point to our application. If you are used to webpack configura
 
 ## [package.json](./package.json)
 
-This is a normal package.json. This is also used to configure jest (our unit testing framework). 
+This is a normal package.json. This is also used to configure [jest](https://facebook.github.io/jest/) (our unit testing framework). 
 
 If you are used to jest take note of the preset of jest.
 
@@ -48,7 +48,7 @@ If you are used to jest take note of the preset of jest.
 
 This is a normal babel configuration file. Yes, when using react-native we still need to use babel.
 
-### Why do we need to use babel?
+### Why do we need to use [babel](https://babeljs.io/)?
 
 To understand this we need to understand how react-native works a little deeper. 
 
