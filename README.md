@@ -2,6 +2,13 @@
 
 At this point we have a working react-native application with almost zero functionality.
 
+## Scripts
+
+* Run ios:
+  * `yarn ios`
+* Run android:
+  * Create an Android virtual device (AVD)
+  * Or Plug in an android device
 ## Steps
 The steps taken up to this point have been:
 
@@ -11,6 +18,9 @@ The steps taken up to this point have been:
     1. `yarn eject`
 1. Deleted app.json
     1. This file isn't needed since we aren't using expo.
+1. Installed node as a dependency
+    1. `yarn add node@9.11.0`
+        1. react-native is incompatible with node version 10 (Latest) if we install node as a dependency we can get around this without using nvm or some other solution.
     
 # What is here?
 
