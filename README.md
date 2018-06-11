@@ -54,6 +54,7 @@ Okay now our framework is all setup and we can begin writing tests against our a
 
 #### Writing our first test
 
-My preference is to have a [src](./src) directory for all source code. Let's move our [App.js](src/App.js) and [App.test.js](src/App.test.js) to our [src](./src) directory.
+My preference is to have a [src](./src) directory for all source code. Let's move our [App.js](src/App.js) and [App.spec.js](src/App.spec.js) to our [src](./src) directory.
 
+I also prefer the convention of .spec.js files to .test.js. So I'm going to rename App.spec.js to App.spec.js
 
