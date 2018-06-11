@@ -21,3 +21,15 @@ built at a later date.
 
 **NOTE**: We will use a mock api instead of a real rest api. This will allow us some nice flexibility throughout the tutorial.
 
+#### Writing our first unit test
+
+I prefer to use enzyme to test react components as I find the api for enzyme to be more natural than the one provided with react-test-renderer. Let's go ahead and add enzyme to our packages:
+
+```bash
+# Open a terminal and execute:
+yarn add enzyme enzyme-adapter-react-16 --dev --exact # installs enzyme and adapter. Saving as dev dependencies with exact version numbers
+```
+
+
+
+
