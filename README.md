@@ -225,6 +225,8 @@ export default class App extends Component {
 
 At this point we should probably show each club's name.
 
+#### Showing club name in list
+
 ```javascript
 // ./src/App.spec.js
 ...
@@ -275,8 +277,11 @@ export default class App extends Component {
 }
 ```
 
-Now we have a correctly rendering list of clubs. However, we have a little bit more to go before we can probably call this story done. We need to show each clubs position in the table.
-Simply sorting the list based on a property like position would work well in this case. Let's go ahead and write a test for that.
+Now we have a correctly rendering list of clubs. However, we have a little bit more to go before we can probably call this story done. 
+
+#### Showing league position
+
+We need to show each clubs position in the table. Simply sorting the list based on a property like position would work well in this case. Let's go ahead and write a test for that.
 
 ```javascript
 // ./src/App.spec.js
@@ -326,6 +331,38 @@ export default class App extends Component {
 ```
 
 Now we have a passing test. 
+
+#### Adding a mock api for runtime
+
+At this point we have our list of clubs being populated with tests, however at runtime we will see no data. For the purposes of this tutorial we will be using an in memory api to populate our application with data.
+
+To create this mock we can simply replace fetch with a different method in our [index.js](./index.js):
+
+```javascript
+// ./index.js
+import { fakeFetch } from "./src/api/fake-fetch"; // This is our fake fetch method.
+import { AppRegistry } from 'react-native';
+import App from './src/App';
+
+global.fetch = fakeFetch;
+AppRegistry.registerComponent('rntutorial', () => App);
+
+```
+
+Now we need to create our [./src/api/fake-fetch.js](./src/api/fake-fetch.js) file with the contents:
+
+```javascript
+export function fakeFetch(url, requestInit) {
+  return Promise.resolve({
+    json: () => Promise.resolve([{name: 'Arsenal', position: 4}, {name: 'Chelsea', position: 3}])
+  });
+}
+```
+
+This is not a great fake, but the goal is to create something that works for now not a complete solution.
+
+Now if we want to see data in our app we can simply modify the fake to have more data or different data. No need for a real rest api. The other nice thing about this solution is that to hit a real
+rest api we can replace one line in our [index.js](./index.js) file and we will be using real data.
 
 ## First User Story Done
 
