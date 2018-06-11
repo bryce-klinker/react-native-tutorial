@@ -61,7 +61,7 @@ I also prefer the convention of .spec.js files to .test.js. So I'm going to rena
 Now let's make our [App.spec.js](./src/App.spec.js) actually test something of value.
 
 ```javascript
-// App.spec.js
+// ./src/App.spec.js
 import React from 'react';
 import { FlatList } from 'react-native';
 import App from './App';
@@ -91,5 +91,13 @@ shows list of clubs
 To pass this test I believe we can change the following:
 
 ```javascript
+// ./src/App.js
+import React from 'react';
+import { FlatList } from 'react-native';
 
+const App = ({ clubs }) => {
+  return <FlatList data={clubs}/>
+};
+
+export default App;
 ```
