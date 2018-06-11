@@ -27,9 +27,28 @@ I prefer to use enzyme to test react components as I find the api for enzyme to 
 
 ```bash
 # Open a terminal and execute:
-yarn add enzyme enzyme-adapter-react-16 --dev --exact # installs enzyme and adapter. Saving as dev dependencies with exact version numbers
+yarn add enzyme enzyme-adapter-react-16 react-dom --dev --exact # installs enzyme, adapter and react-dom. Saving as dev dependencies with exact version numbers
 ```
 
+Now we need to update our [package.json](./package.json) with configuration for jest.
 
+```json
+{
+  ...
+  "jest": {
+    "preset": "react-native",
+    "setupTestFrameworkScriptFile": "<rootDir>/testing/setup.js"
+  }
+  ...
+}
+``` 
+
+Inside the [testing/setup.js](./testing/setup.js) file we can add the following lines:
+
+```javascript
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+configure({ adapter: new Adapter() });
+```
 
 
