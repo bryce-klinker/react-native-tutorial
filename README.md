@@ -58,3 +58,38 @@ My preference is to have a [src](./src) directory for all source code. Let's mov
 
 I also prefer the convention of .spec.js files to .test.js. So I'm going to rename App.spec.js to App.spec.js
 
+Now let's make our [App.spec.js](./src/App.spec.js) actually test something of value.
+
+```javascript
+// App.spec.js
+import React from 'react';
+import { FlatList } from 'react-native';
+import App from './App';
+import { shallow } from 'enzyme';
+
+it('shows list of clubs', () => {
+  const clubs = [{}, {}, {}];
+  const app = shallow(<App clubs={clubs}/>); // Shallow render the component using enzyme
+  expect(app.find(FlatList).props().data.length).toBe(3); // We expect to see 3 clubs in a flat list
+});
+```
+This gives us our first failing test:
+
+```
+shows list of clubs
+
+    Method “props” is only meant to be run on a single node. 0 found instead.
+
+       7 |   const clubs = [{}, {}, {}];
+       8 |   const app = shallow(<App clubs={clubs} />);
+    >  9 |   expect(app.find(FlatList).props().data.length).toBe(3);
+         |                             ^
+      10 | });
+      11 | 
+```
+
+To pass this test I believe we can change the following:
+
+```javascript
+
+```
