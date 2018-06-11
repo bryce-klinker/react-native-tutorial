@@ -118,3 +118,107 @@ To use the mock fetch we need to update our [testing/setup.js](./testing/setup.j
 ...
 global.fetch = require('jest-fetch-mock');
 ```
+
+No we can update our test to have the following:
+
+```javascript
+// ./src/App.spec.js
+...
+beforeEach(() => {
+  jest.useFakeTimers(); // Allows us to use jest.runAllTicks();
+});
+...
+it('shows list of clubs', () => {
+  const clubs = [{}, {}, {}];
+  fetch.mockResponse(JSON.stringify(clubs));
+
+  const app = shallow(<App />);
+  expect(app.find(FlatList).props().data.length).toBe(0);
+
+  jest.runAllTicks(); // This runs all outstanding promises such as our fetch.
+  app.update();
+
+  expect(app.find(FlatList).props().data.length).toBe(3);
+});
+```
+
+This gives us the failure of:
+
+```
+shows list of clubs
+
+    TypeError: Cannot read property 'length' of undefined
+
+       9 | 
+      10 |   const app = shallow(<App />);
+    > 11 |   expect(app.find(FlatList).props().data.length).toBe(0);
+         |          ^
+      12 | 
+      13 |   jest.runAllTicks();
+      14 |   app.update();
+```
+
+Now we need to add the following to our component:
+
+```javascript
+// ./src/App.js
+import React, { Component } from 'react';
+import { FlatList } from 'react-native';
+
+export default class App extends Component {
+  state = {
+    clubs: []
+  };
+
+  async componentDidMount() {
+    const response = await fetch(''); // Our test doesn't yet expect a url to be used hence we leave that out.
+    const clubs = await response.json();
+    this.setState({ clubs });
+  }
+
+  render() {
+    const { clubs } = this.state;
+    return <FlatList data={clubs}/>
+  }
+}
+```
+
+Now we have a passing test. However, we should update our test to make sure we use the correct url:
+
+```javascript
+// ./src/App.spec.js
+it('shows list of clubs', () => {
+  ...
+  expect(fetch).toHaveBeenCalledWith('http://somewhere.com/api/clubs');
+});
+```
+
+This causes our test to fail:
+
+```
+Expected mock function to have been called with:
+      "http://somewhere.com/api/clubs"
+    as argument 1, but it was called with
+      "".
+
+      19 | 
+      20 |   expect(app.find(FlatList).props().data.length).toBe(3);
+    > 21 |   expect(fetch).toHaveBeenCalledWith('http://somewhere.com/api/clubs');
+         |                 ^
+      22 | });
+```
+
+To pass our test we need to use the url given from the test:
+
+```javascript
+// ./src/App.js
+export default class App extends Component {
+  ...
+  async componentDidMount() {
+    const response = await fetch('http://somewhere.com/api/clubs');
+    const clubs = await response.json();
+    this.setState({ clubs });
+  }
+  ...
+}
+```

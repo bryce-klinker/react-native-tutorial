@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { FlatList } from 'react-native';
 
-const App = ({ clubs }) => {
-  return <FlatList data={clubs}/>
-};
+export default class App extends Component {
+  state = {
+    clubs: []
+  };
 
-export default App;
+  async componentDidMount() {
+    const response = await fetch('http://somewhere.com/api/clubs');
+    const clubs = await response.json();
+    this.setState({ clubs });
+  }
+
+  render() {
+    const { clubs } = this.state;
+    return <FlatList data={clubs}/>
+  }
+}
