@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, Text } from 'react-native';
 
 export default class App extends Component {
   state = {
@@ -14,6 +14,8 @@ export default class App extends Component {
 
   render() {
     const { clubs } = this.state;
-    return <FlatList data={clubs}/>
+    return <FlatList data={clubs}
+                     renderItem={({item}) => <Text>{item.name}</Text>}
+           />
   }
 }

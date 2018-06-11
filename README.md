@@ -222,3 +222,55 @@ export default class App extends Component {
   ...
 }
 ```
+
+At this point we should probably show each club's name.
+
+```javascript
+// ./src/App.spec.js
+it('should show club name', () => {
+  const clubs = [{ name: 'Arsenal' }];
+  fetch.mockResponse(JSON.stringify(clubs));
+
+  const app = shallow(<App />);
+  jest.runAllTicks();
+  app.update();
+  const item = app.find(FlatList).props().renderItem({item: clubs[0]}); // FlatList doesn't have an ideal api, but this is the on that exists
+  const renderedItem = shallow(item);  // Once we have an item we can render it using enzyme's shallow method
+  expect(renderedItem.text()).toContain('Arsenal'); // Assert the name is in the text of the item
+});
+```
+
+As we can see from this example the API for FlatList is a little weird to test, but it is doable. However, we do see the correct failure when we do this.
+
+```
+should show club name
+
+    TypeError: app.find(...).props(...).renderItem is not a function
+
+      29 |   jest.runAllTicks();
+      30 |   app.update();
+    > 31 |   const item = shallow(app.find(FlatList).props().renderItem({item: clubs[0]}));
+         |                                                   ^
+      32 |   expect(item.find(Text).children()).toContain('Arsenal');
+      33 | })
+      34 | 
+```
+
+To fix this issue we can add the following to our App component:
+
+```javascript
+...
+import { ..., Text } from 'react-native';
+
+export default class App extends Component {
+  ...
+  render() {
+    const { clubs } = this.state;
+    return <FlatList data={clubs} 
+                     renderItem={({item}) => <Text>{item.name}</Text>} 
+           />
+  }
+}
+```
+
+Now we have a correctly rendering list of clubs.
