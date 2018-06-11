@@ -364,6 +364,47 @@ This is not a great fake, but the goal is to create something that works for now
 Now if we want to see data in our app we can simply modify the fake to have more data or different data. No need for a real rest api. The other nice thing about this solution is that to hit a real
 rest api we can replace one line in our [index.js](./index.js) file and we will be using real data.
 
+#### Adding some style
+
+Looking at our app currently we see that things aren't quite right:
+
+![Bad Styling](./tutorial-images/2/bad-styling.png)
+
+Let's go ahead and fix that so that we can call our story done. We need to modify our [App.js](./src/App.js) to have the following:
+
+```javascript
+import React, {Component} from 'react';
+import {..., StyleSheet, View} from 'react-native';
+
+export default class App extends Component {
+  ...
+  render() {
+    const {clubs} = this.state;
+    const sortedClubs = clubs.sort((club1, club2) => club1.position - club2.position);
+    return (
+      <View style={styles.container}> {/* Add View to surround list and apply styling */}
+        <FlatList data={sortedClubs}
+                  renderItem={({item}) => <Text>{item.name}</Text>}
+        />
+      </View>
+    );
+  }
+}
+
+// Create container style for main view.
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 30,
+    paddingLeft: 15
+  }
+});
+```
+
+Now we at least don't have text overlapping in the status bar:
+
+![Good Enough Styling](./tutorial-images/2/good-styling.png)
+
 ## First User Story Done
 
 Now we have our user story completed. We can now get a list of clubs and display them based on position, which is the simplest version of a league table. There are many other parts of
