@@ -101,3 +101,20 @@ const App = ({ clubs }) => {
 
 export default App;
 ```
+
+#### Loading clubs from a rest api
+
+We can now start adding tests that expect our list of clubs to be loaded from a rest api. Let's start with a test that expects this.
+
+To start with I want to pull in one more package to aid with mocking fetch: 
+
+```bash
+yarn add jest-fetch-mock --dev --exact
+```
+
+To use the mock fetch we need to update our [testing/setup.js](./testing/setup.js) file with the following:
+
+```javascript
+...
+global.fetch = require('jest-fetch-mock');
+```
