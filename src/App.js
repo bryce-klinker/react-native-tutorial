@@ -14,7 +14,8 @@ export default class App extends Component {
 
   render() {
     const { clubs } = this.state;
-    return <FlatList data={clubs}
+    const sortedClubs = clubs.sort((club1, club2) => club1.position - club2.position);
+    return <FlatList data={sortedClubs}
                      renderItem={({item}) => <Text>{item.name}</Text>}
            />
   }

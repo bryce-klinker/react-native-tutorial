@@ -227,6 +227,7 @@ At this point we should probably show each club's name.
 
 ```javascript
 // ./src/App.spec.js
+...
 it('should show club name', () => {
   const clubs = [{ name: 'Arsenal' }];
   fetch.mockResponse(JSON.stringify(clubs));
@@ -259,6 +260,7 @@ should show club name
 To fix this issue we can add the following to our App component:
 
 ```javascript
+// ./src/App.js
 ...
 import { ..., Text } from 'react-native';
 
@@ -273,4 +275,59 @@ export default class App extends Component {
 }
 ```
 
-Now we have a correctly rendering list of clubs.
+Now we have a correctly rendering list of clubs. However, we have a little bit more to go before we can probably call this story done. We need to show each clubs position in the table.
+Simply sorting the list based on a property like position would work well in this case. Let's go ahead and write a test for that.
+
+```javascript
+// ./src/App.spec.js
+...
+it('should order clubs based on position in league', () => {
+  const clubs = [{position: 2}, {position: 3}, {position: 1}];
+  fetch.mockResponse(JSON.stringify(clubs));
+
+  const app = shallow(<App />);
+  jest.runAllTicks();
+  app.update();
+
+  expect(app.find(FlatList).props().data[0]).toEqual({position: 1});
+  expect(app.find(FlatList).props().data[1]).toEqual({position: 2});
+  expect(app.find(FlatList).props().data[2]).toEqual({position: 3});
+})
+```
+
+Now we have a failing test expecting our clubs to be sorted.
+
+```
+should order clubs based on position in league
+
+    expect(received).toEqual(expected)
+
+    Expected value to equal:
+      {"position": 1}
+    Received:
+      {"position": 2}
+```
+
+To fix this test we simply need to sort our clubs based on position before assigning them to the FlatList's data property.
+
+```javascript
+// ./src/App.js
+...
+export default class App extends Component {
+  ...
+  render() {
+    const { clubs } = this.state;
+    const sortedClubs = clubs.sort((club1, club2) => club1.position - club2.position); // Sort clubs before assigning them to FlatList's data property
+    return <FlatList data={sortedClubs}
+                     renderItem={({item}) => <Text>{item.name}</Text>}
+           />
+  }
+}
+```
+
+Now we have a passing test. 
+
+## First User Story Done
+
+Now we have our user story completed. We can now get a list of clubs and display them based on position, which is the simplest version of a league table. There are many other parts of
+a real league table we should show eventually however at this point we do know what position Arsenal holds. This was the ask for the original story. 
