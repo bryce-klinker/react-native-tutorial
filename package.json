@@ -4,9 +4,13 @@
   "private": true,
   "devDependencies": {
     "babel-preset-react-native-stage-0": "1.0.1",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
     "jest": "23.1.0",
+    "jest-fetch-mock": "1.6.3",
     "jest-react-native": "18.0.0",
     "node": "9.11.0",
+    "react-dom": "16.4.0",
     "react-test-renderer": "16.3.1"
   },
   "scripts": {
@@ -16,7 +20,8 @@
     "test": "jest"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupTestFrameworkScriptFile": "<rootDir>/testing/setup.js"
   },
   "dependencies": {
     "react": "16.3.1",
